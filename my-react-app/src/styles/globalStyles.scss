@@ -1,0 +1,27 @@
+:root {
+    --color-primary: #FF577F;
+    --color-primary-focus: #FF427F;
+    --color-primary-negative: #59323F;
+    --color-gray-4: #121214;
+    --color-gray-3: #212529;
+    --color-gray-2: #343B41;
+    --color-gray-1: #868E96;
+    --color-gray-0: #F8F9FA;
+
+    --font-size-1: 1.125rem;
+    --font-size-2: 1rem;
+    --font-size-3: .75rem;
+
+    --font-weight-1: 400;
+    --font-weight-2: 700;
+
+    --font-family: "Inter", sans-serif;
+
+    --radius-1: 0.25rem;
+}
+
+body{    
+    background-color: var(--color-gray-4);
+    font-family: var(--font-family);
+    color: var(--color-gray-0);
+}

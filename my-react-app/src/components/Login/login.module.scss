@@ -1,0 +1,26 @@
+.header__content{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.main__content{
+    width: 20%;
+    margin-left: auto; 
+    margin-right: auto;
+    border-radius: var(--radius-1);
+    padding: 2rem 1rem 2rem 1rem;
+    background-color: var(--color-gray-3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    .register__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}

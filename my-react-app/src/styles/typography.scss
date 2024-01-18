@@ -1,0 +1,48 @@
+.main__title{
+    align-self: center;
+    color: var(--color-gray-0);
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-2);
+}
+
+.main__text{
+    align-self: center;
+    color: var(--color-gray-1);
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-1);
+}
+
+.label__form{
+    color: var(--color-gray-0);
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-1);
+}
+.error__text{
+    color: var(--color-gray-1);
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-1);
+}
+
+.user__name{
+    color: var(--color-gray-0);
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-2);
+}
+
+.user__module{
+    color: var(--color-gray-1);
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-1);
+}
+
+.warning__title{
+    color: var(--color-gray-0);
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-2);
+}
+
+.warning__text{
+    color: var(--color-gray-0);
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-1);
+}

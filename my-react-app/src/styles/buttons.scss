@@ -1,0 +1,57 @@
+.register__button{
+    width: 100%;
+    border-radius: var(--radius-1);
+    border: none;
+    padding: 0.5rem;
+    background-color: var(--color-gray-1);
+    color: var(--color-gray-0);
+
+    .register__button:focus{
+        background-color: var(--color-gray-2);
+    }
+
+    .register__button:hover{
+        background-color: var(--color-gray-2);
+    }
+}
+
+.login__button{
+    border-radius: var(--radius-1);
+    border: none;
+    padding: 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-gray-0);
+
+    .login__button:focus{
+        background-color: var(--color-primary-focus);
+    }
+
+    .login__button:hover{
+        background-color: var(--color-primary-focus);
+    }
+}
+
+.header__button{
+    border-radius: var(--radius-1);
+    border: none;
+    padding: 0.5rem;
+    background-color: var(--color-gray-3);
+    color: var(--color-gray-0);
+    font-size: var(--font-size-3);
+}
+
+.registerPage__button{
+    border-radius: var(--radius-1);
+    border: none;
+    padding: 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-gray-0);
+
+    .registerPage__button:focus{
+        background-color: var(--color-primary-focus);
+    }
+
+    .registerPage__button:hover{
+        background-color: var(--color-primary-focus);
+    }
+}

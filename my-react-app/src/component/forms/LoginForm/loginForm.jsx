@@ -1,35 +1,48 @@
-import {zodResolver} from "@hookform/resolvers/zod"
-import {useForm} from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
 import { formSchema } from "./formSchema"
 import { api } from "../../../services/api"
+import { useNavigate } from "react-router-dom"
+import style from "./loginForm.module.scss"
 
-export const LoginForm = ()=>{
-    const {register, handleSubmit, formState: {errors}} = useForm({resolver: zodResolver(formSchema)})
+export const LoginForm = ({ setUser }) => {
+    const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(formSchema) })
 
-    const submit = (formData)=>{
+    const navigate = useNavigate()
+
+    const submit = (formData) => {
         userLogin(formData)
+
         console.log(formData)
     }
 
-    const userLogin = async(formData)=>{
+    const userLogin = async (formData) => {
         try {
-            const {data} = await api.post("/sessions", formData)
-            alert("sucesso")
-            console.log(data)
+            const { data } = await api.post("/sessions", formData)
+            navigate("/dashboard")
+            setUser(data.user)
+
+            console.log(data.user)
         } catch (error) {
             console.log(error)
         }
     }
 
     return (
-        <form onSubmit={handleSubmit(submit)}>
-            <label htmlFor="email">Email</label>
-            <input type="email" placeholder="Digite seu e-mail" name="email" {...register("email")} />
-            {errors.email ? <p>{errors.email.message}</p> : null}
-            <label htmlFor="password">Senha</label>
-            <input type="password" placeholder="Digite sua senha" name="password" {...register("password")} />
-            {errors.password ? <p>{errors.password.message}</p> : null}
-            <button type="submit">Entrar</button>
+        <form className={style.login__form} onSubmit={handleSubmit(submit)}>
+            <div className={style.input__container}>
+                <label className="label__form" htmlFor="email">Email</label>
+                <input className={style.login__input} type="email" placeholder="Digite seu e-mail" name="email" {...register("email")} />
+                {errors.email ? <p className="error__text">{errors.email.message}</p> : null}
+            </div>
+
+            <div className={style.input__container}>
+                <label className="label__form" htmlFor="password">Senha</label>
+                <input className={style.login__input} type="password" placeholder="Digite sua senha" name="password" {...register("password")} />
+                {errors.password ? <p className="error__text">{errors.password.message}</p> : null}
+            </div>
+
+            <button className="login__button" type="submit">Entrar</button>
         </form>
     )
 }
