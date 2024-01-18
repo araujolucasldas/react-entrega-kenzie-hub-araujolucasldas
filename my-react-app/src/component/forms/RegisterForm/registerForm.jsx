@@ -5,7 +5,8 @@ import { api } from "../../../services/api"
 import { useNavigate } from "react-router-dom"
 import style from "./registerForm.module.scss"
 
-export const RegisterForm = () => {
+
+export const RegisterForm = ({ setUser }) => {
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(formSchema) })
 
     const navigate = useNavigate()
@@ -13,7 +14,6 @@ export const RegisterForm = () => {
     const submit = (formData) => {
         userRegister(formData)
 
-        console.log(formData)
     }
 
     const userRegister = async (formData) => {
@@ -24,7 +24,6 @@ export const RegisterForm = () => {
 
             console.log(data.user)
         } catch (error) {
-            console.log(error)
         }
     }
 

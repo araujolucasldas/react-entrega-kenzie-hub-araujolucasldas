@@ -26,3 +26,33 @@
         gap: 1rem;
     }
 }
+
+@media (max-width: 1024px){
+    .header__content{
+        width: 33%;
+    }
+
+    .main__content{
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px){
+    .header__content{
+        width: 53%;
+    }
+
+    .main__content{
+        width: 50%;
+    }
+}
+
+@media (max-width: 425px){
+    .header__content{
+        width: 73%;
+    }
+
+    .main__content{
+        width: 70%;
+    }
+}

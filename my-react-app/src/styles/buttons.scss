@@ -6,11 +6,11 @@
     background-color: var(--color-gray-1);
     color: var(--color-gray-0);
 
-    .register__button:focus{
+    &:focus{
         background-color: var(--color-gray-2);
     }
 
-    .register__button:hover{
+    &:hover{
         background-color: var(--color-gray-2);
     }
 }
@@ -22,11 +22,11 @@
     background-color: var(--color-primary);
     color: var(--color-gray-0);
 
-    .login__button:focus{
+    &:focus{
         background-color: var(--color-primary-focus);
     }
 
-    .login__button:hover{
+    &:hover{
         background-color: var(--color-primary-focus);
     }
 }
@@ -47,11 +47,11 @@
     background-color: var(--color-primary);
     color: var(--color-gray-0);
 
-    .registerPage__button:focus{
+    &:focus{
         background-color: var(--color-primary-focus);
     }
 
-    .registerPage__button:hover{
+    &:hover{
         background-color: var(--color-primary-focus);
     }
 }

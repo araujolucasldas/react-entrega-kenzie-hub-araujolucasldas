@@ -24,3 +24,21 @@
         gap: 1rem;
     }
 }
+
+@media (max-width: 1024px){
+    .main__content{
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px){
+    .main__content{
+        width: 50%;
+    }
+}
+
+@media (max-width: 425px){
+    .main__content{
+        width: 70%;
+    }
+}
