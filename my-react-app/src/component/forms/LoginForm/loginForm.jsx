@@ -12,19 +12,16 @@ export const LoginForm = ({ setUser }) => {
 
     const submit = (formData) => {
         userLogin(formData)
-
-        console.log(formData)
     }
 
     const userLogin = async (formData) => {
         try {
             const { data } = await api.post("/sessions", formData)
+            localStorage.setItem("@TOKEN", data.token)
+            localStorage.setItem("@USERID", data.user.id)
             navigate("/dashboard")
             setUser(data.user)
-
-            console.log(data.user)
         } catch (error) {
-            console.log(error)
         }
     }
 

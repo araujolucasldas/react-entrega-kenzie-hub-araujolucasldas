@@ -10,6 +10,8 @@ export const RoutesMain = ()=>{
     const navigate = useNavigate()
 
     const userLogout = ()=>{
+        localStorage.removeItem("@TOKEN")
+        localStorage.removeItem("@USERID")
         setUser(null)
         navigate("/")
     }

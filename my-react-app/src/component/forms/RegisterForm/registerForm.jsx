@@ -4,9 +4,11 @@ import { formSchema } from "./formSchema"
 import { api } from "../../../services/api"
 import { useNavigate } from "react-router-dom"
 import style from "./registerForm.module.scss"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-export const RegisterForm = ({ setUser }) => {
+export const RegisterForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(formSchema) })
 
     const navigate = useNavigate()
@@ -16,18 +18,27 @@ export const RegisterForm = ({ setUser }) => {
 
     }
 
+    const notifySuccess = ()=>{
+        toast.success("Conta criada com sucesso!")
+    }
+
+    const notifyError = ()=>{
+        toast.error("Ops! Algo deu errado")
+    }
+
     const userRegister = async (formData) => {
         try {
             const { data } = await api.post("/users", formData)
-            navigate("/dashboard")
-            setUser(data.user)
+            notifySuccess()
+            navigate("/")
 
-            console.log(data.user)
         } catch (error) {
+            notifyError()
         }
     }
 
     return (
+        <>
         <form className={style.register__form} onSubmit={handleSubmit(submit)}>
             <div className={style.input__container}>
                 <label className="label__form" htmlFor="name">Nome</label>
@@ -77,7 +88,9 @@ export const RegisterForm = ({ setUser }) => {
                 {errors.course_module ? <p className="error__text">{errors.course_module.message}</p> : null}
             </div>
 
-            <button className="registerPage__button" type="submit">Cadastrar</button>
+            <button  className="registerPage__button" type="submit">Cadastrar</button>
         </form>
+        <ToastContainer theme="dark" />
+        </>
     )
 }

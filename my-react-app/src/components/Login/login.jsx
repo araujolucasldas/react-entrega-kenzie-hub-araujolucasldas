@@ -14,7 +14,7 @@ export const Login = ({ setUser }) => {
                 <LoginForm setUser={setUser} />
                 <div className={style.register__container}>
                     <p className="main__text">Ainda não possui uma conta?</p>
-                    <Link className="register__buttons" to="/register">
+                    <Link className="register__buttonContainer" to="/register">
                         <button className="register__button" type="button">Cadastre-se</button>
                     </Link>
                 </div>

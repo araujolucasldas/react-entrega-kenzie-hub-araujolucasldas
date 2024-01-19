@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import logo from "../../assets/logo.svg"
 import { RegisterForm } from "../../component/forms/RegisterForm/registerForm"
 import style from "./register.module.scss"
-export const Register = ({ setUser })=>{
+export const Register = ()=>{
     return(
         <>
             <header className={style.header__content}>
@@ -16,7 +16,7 @@ export const Register = ({ setUser })=>{
                     <h1 className="main__title">Crie sua conta</h1>
                     <p className="main__text">Rapido e grátis, vamos nessa</p>
                 </div>
-                <RegisterForm setUser={setUser} />
+                <RegisterForm />
             </main>
         </>
         
