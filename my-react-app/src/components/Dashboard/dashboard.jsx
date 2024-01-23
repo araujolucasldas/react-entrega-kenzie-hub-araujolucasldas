@@ -1,7 +1,14 @@
 import logo from "../../assets/logo.svg"
+import { TechList } from "../../component/TechList/techList"
+import { CreateTechModal } from "../../component/modals/CreateTechModal/createTechModal"
 import style from "./dashboard.module.scss"
+import { useState } from "react"
 
-export const Dashboard = ({ user, userLogout }) => {
+export const Dashboard = ({ user, userLogout, tech, setTech, techDelete}) => {
+    const [openCreateModal, setOpenCreateModal] = useState(false)
+
+
+
     return (
         <>
             <header className={style.header__content}>
@@ -16,9 +23,13 @@ export const Dashboard = ({ user, userLogout }) => {
                     </section>
                 </div>
 
-                <section className={style.user__warning}>
-                    <h1 className="warning__title">Que pena! Estamos em desenvolvimento </h1>
-                    <p className="warning__text">Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>
+                <section className={style.techs__container}>
+                    <div className={style.techs__header}>
+                        <h1 className="techs__title">Tecnologias</h1>
+                        <button className="techs__button" onClick={() => setOpenCreateModal(true)}>+</button>
+                        {openCreateModal ? <CreateTechModal setOpenCreateModal={setOpenCreateModal} setTech={setTech} /> : null}
+                    </div>
+                    <TechList setTech={setTech} tech={tech} techDelete={techDelete}/>
                 </section>
             </main>
         </>

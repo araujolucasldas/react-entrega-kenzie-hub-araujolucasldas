@@ -1,9 +1,9 @@
-.register__buttonContainer{
+.register__buttonContainer {
     width: 100%;
     border-radius: var(--radius-1)
 }
 
-.register__button{
+.register__button {
     width: 100%;
     border-radius: var(--radius-1);
     border: none;
@@ -11,32 +11,32 @@
     background-color: var(--color-gray-1);
     color: var(--color-gray-0);
 
-    &:focus{
+    &:focus {
         background-color: var(--color-gray-2);
     }
 
-    &:hover{
+    &:hover {
         background-color: var(--color-gray-2);
     }
 }
 
-.login__button{
+.login__button {
     border-radius: var(--radius-1);
     border: none;
     padding: 0.5rem;
     background-color: var(--color-primary);
     color: var(--color-gray-0);
 
-    &:focus{
+    &:focus {
         background-color: var(--color-primary-focus);
     }
 
-    &:hover{
+    &:hover {
         background-color: var(--color-primary-focus);
     }
 }
 
-.header__button{
+.header__button {
     border-radius: var(--radius-1);
     border: none;
     padding: 0.5rem;
@@ -45,18 +45,33 @@
     font-size: var(--font-size-3);
 }
 
-.registerPage__button{
+.registerPage__button {
     border-radius: var(--radius-1);
     border: none;
     padding: 0.5rem;
     background-color: var(--color-primary);
     color: var(--color-gray-0);
 
-    &:focus{
+    &:focus {
         background-color: var(--color-primary-focus);
     }
 
-    &:hover{
+    &:hover {
         background-color: var(--color-primary-focus);
     }
+}
+
+.techs__button{
+    border-radius: var(--radius-1);
+    border: none;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    background-color: var(--color-gray-3);
+    color: var(--color-gray-0);
+    font-size: var(--font-size-3);
+}
+
+.modal__close {
+    border: none;
+    background-color: transparent;
+    color: var(--color-gray-1);
 }

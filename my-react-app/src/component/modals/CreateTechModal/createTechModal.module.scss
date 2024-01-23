@@ -1,0 +1,38 @@
+.createModal__overlay {
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .3);
+
+    .createModal__box {
+        position: relative;
+        width: 100%;
+        max-width: 350px;
+        padding: 0rem;
+        background: var(--color-gray-3);
+        border-radius: var(--radius-1);
+        display: flex;
+        flex-direction: column;
+
+        .createModal__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: var(--color-gray-2);
+            border-top-left-radius: var(--radius-1);
+            border-top-right-radius: var(--radius-1)
+        }
+
+        .createModal__content{
+            padding: 1rem;
+        }
+    }
+}

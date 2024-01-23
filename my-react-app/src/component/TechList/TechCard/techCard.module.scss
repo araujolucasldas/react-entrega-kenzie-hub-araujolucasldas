@@ -1,0 +1,13 @@
+.tech__card{
+    background-color: var(--color-gray-4);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--radius-1);
+
+    .tech__options{
+        display: flex;
+        gap: 0.5rem;
+    }
+}

@@ -3,7 +3,7 @@ import logo from "../../assets/logo.svg"
 import { LoginForm } from "../../component/forms/LoginForm/loginForm"
 import style from "./login.module.scss"
 
-export const Login = ({ setUser }) => {
+export const Login = ({ setUser, setTech }) => {
     return (
         <>
             <header className={style.header__content}>
@@ -11,7 +11,7 @@ export const Login = ({ setUser }) => {
             </header>
             <main className={style.main__content}>
                 <h1 className="main__title">Login</h1>
-                <LoginForm setUser={setUser} />
+                <LoginForm setUser={setUser} setTech={setTech}/>
                 <div className={style.register__container}>
                     <p className="main__text">Ainda não possui uma conta?</p>
                     <Link className="register__buttonContainer" to="/register">

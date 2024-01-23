@@ -6,9 +6,13 @@ import { useNavigate } from "react-router-dom"
 import style from "./registerForm.module.scss"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaRegEyeSlash, FaRegEye } from "react-icons/fa"
+import { useState } from "react"
 
 
 export const RegisterForm = () => {
+    const [showPassword, setShowPassword] = useState(false)
+
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(formSchema) })
 
     const navigate = useNavigate()
@@ -54,14 +58,16 @@ export const RegisterForm = () => {
 
             <div className={style.input__container}>
                 <label className="label__form" htmlFor="password">Senha</label>
-                <input className={style.register__input} type="password" placeholder="Digite sua Senha" name="password" {...register("password")} />
+                <input className={style.register__input} type={showPassword ? "text" : "password"} placeholder="Digite sua Senha" name="password" {...register("password")} />
                 {errors.password ? <p className="error__text">{errors.password.message}</p> : null}
+                {showPassword ? <FaRegEyeSlash onClick={()=> setShowPassword(!showPassword)} /> : <FaRegEye onClick={()=> setShowPassword(!showPassword)} />}
             </div>
 
             <div className={style.input__container}>
                 <label className="label__form" htmlFor="confirmPassword">Confirmar Senha</label>
-                <input className={style.register__input} type="password" placeholder="Digite novamente sua senha" name="confirmPassword" {...register("confirmPassword")} />
+                <input className={style.register__input} type={showPassword ? "text" : "password"} placeholder="Digite novamente sua senha" name="confirmPassword" {...register("confirmPassword")} />
                 {errors.confirmPassword ? <p className="error__text">{errors.confirmPassword.message}</p> : null}
+                {showPassword ? <FaRegEyeSlash onClick={()=> setShowPassword(!showPassword)} /> : <FaRegEye onClick={()=> setShowPassword(!showPassword)} />}
             </div>
 
             <div className={style.input__container}>
