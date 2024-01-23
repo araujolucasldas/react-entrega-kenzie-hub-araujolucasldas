@@ -1,13 +1,14 @@
 import {RoutesMain} from "./routes/RoutesMain"
 import "./styles/index.scss"
+import { TechProvider } from './providers/TechContext.jsx'
+
 
 function App() {
-  const notify = ()=>{
-    toast.success("teste")
-  }
   return (
     <>
-      <RoutesMain />
+      <TechProvider>
+        <RoutesMain />
+      </TechProvider>
     </>
   )
 }

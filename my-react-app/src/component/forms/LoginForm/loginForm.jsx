@@ -7,7 +7,7 @@ import style from "./loginForm.module.scss"
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa"
 import { useState} from "react"
 
-export const LoginForm = ({ setUser, setTech}) => {
+export const LoginForm = ({ setUser }) => {
     const [showPassword, setShowPassword] = useState(false)
 
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(formSchema) })

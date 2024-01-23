@@ -1,8 +1,13 @@
 import { useForm } from "react-hook-form"
 import style from "./editModalForm.module.scss"
-import { api } from "../../../services/api"
+import { useContext } from "react"
+import { TechContext } from "../../../providers/TechContext"
+//import { api } from "../../../services/api"
 
-export const EditModalForm = ({setEditingTech, editingTech, setTech, tech}) => {
+//techUpdate,  editingTech
+export const EditModalForm = () => {
+    const {editingTech, techUpdate} = useContext(TechContext)
+
     const { register, handleSubmit } = useForm({
         values: {
             title: editingTech.title,
@@ -11,37 +16,32 @@ export const EditModalForm = ({setEditingTech, editingTech, setTech, tech}) => {
     })
 
     const submit = (formData) => {
-        //console.log(formData)
-        //console.log(editingTech.title)
-        //console.log(editingTech.status)        
-        //console.log(editingTech.id)
-        
         techUpdate(formData)
-
     }
-    const techUpdate = async(formData)=>{
-        try {
-            const token = localStorage.getItem("@TOKEN")
 
-            const {data} = await api.put(`/users/techs/${editingTech.id}`, formData, {
-                headers: { Authorization: `Bearer ${token}` },
-              })
+//    const techUpdate = async(formData)=>{
+ //       try {
+   //         const token = localStorage.getItem("@TOKEN")
+//
+  //          const {data} = await api.put(`/users/techs/${editingTech.id}`, formData, {
+    //            headers: { Authorization: `Bearer ${token}` },
+      //        })
+//
+  //          const newTechList = tech.map((item)=>{
+    //            if(item.id === editingTech.id){
+      //              return data
+        //        }else{
+          //          return item
+            //    }
+            //})
 
-            const newTechList = tech.map((item)=>{
-                if(item.id === editingTech.id){
-                    return data
-                }else{
-                    return item
-                }
-            })
-
-            setTech(newTechList)
-            setEditingTech(null)
+            //setTech(newTechList)
+            //setEditingTech(null)
             //console.log(newTechList)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+        //} catch (error) {
+          //  console.log(error)
+        //}
+    //}
 
     return (
         <>

@@ -11,3 +11,24 @@
         gap: 0.5rem;
     }
 }
+
+@media (max-width: 768px){
+    .tech__card{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+
+        .tech__options{
+            width:100%;
+            display: flex;
+            justify-content: space-between;
+
+            .tech__icons{
+                display: flex;
+                gap: 0.5rem;
+            }
+        }
+        
+    }
+}

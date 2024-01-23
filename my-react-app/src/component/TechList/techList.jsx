@@ -1,10 +1,19 @@
 import { TechCard } from "./TechCard/techCard"
 import style from "./techList.module.scss"
 
-export const TechList = ({setTech, tech, techDelete})=>{
+//techDelete
+//editingTech,setEditingTech,techUpdate
+//{tech}
+export const TechList = ()=>{
     return(
         <div className={style.tech__container}>
-            <TechCard setTech={setTech} tech={tech} techDelete={techDelete} />
+            <TechCard 
+            // techUpdate={techUpdate}
+            // editingTech={editingTech}
+            // setEditingTech={setEditingTech}
+            //tech={tech} 
+            //techDelete={techDelete} 
+            />
         </div>
     )
 }

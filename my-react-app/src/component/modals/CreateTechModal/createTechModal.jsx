@@ -1,7 +1,8 @@
 import { CreateModalForm } from "../../forms/createModalForm/createModalForm"
 import style from "./createTechModal.module.scss"
 
-export const CreateTechModal = ({ setOpenCreateModal, setTech }) => {
+//techRegister
+export const CreateTechModal = ({setOpenCreateModal}) => {
 
     return (
         <>
@@ -12,7 +13,9 @@ export const CreateTechModal = ({ setOpenCreateModal, setTech }) => {
                         <button className="modal__close" onClick={() => setOpenCreateModal(false)}>X</button>
                     </div>
                     <div className={style.createModal__content}>
-                        <CreateModalForm setTech={setTech} />
+                        <CreateModalForm
+                        //techRegister={techRegister}
+                         />
                     </div>
                 </div>
             </div>
