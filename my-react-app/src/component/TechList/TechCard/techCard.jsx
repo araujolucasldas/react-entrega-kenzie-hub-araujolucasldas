@@ -6,8 +6,6 @@ import { EditTechModal } from "../../modals/EditTechModal/editTechModal";
 import { useContext } from "react";
 import { TechContext } from "../../../providers/TechContext";
 
-//techDelete
-//editingTech, setEditingTech,techUpdate
 export const TechCard = () => {
     const {techDelete} = useContext(TechContext)
 
@@ -25,11 +23,7 @@ export const TechCard = () => {
                         <span className="tech__status">{item.status}</span>
                         <div className={style.tech__icons}>
                             <MdOutlineEdit onClick={() => setEditingTech(item)} />
-                            {editingTech ? <EditTechModal 
-                            //techUpdate={techUpdate}
-                            // editingTech={editingTech} 
-                            // setEditingTech={setEditingTech}
-                            /> : null}
+                            {editingTech ? <EditTechModal/> : null}
                             <CgTrash onClick={() => techDelete(item.id)} />
                         </div>
 

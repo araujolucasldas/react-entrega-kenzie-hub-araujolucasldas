@@ -3,7 +3,6 @@ import { EditModalForm } from "../../forms/editModalForm/editModalForm"
 import style from "./editTechModal.module.scss"
 import { TechContext } from "../../../providers/TechContext"
 
-//techUpdate, setEditingTech, editingTech
 export const EditTechModal = ({})=>{
     const {setEditingTech} = useContext(TechContext)
 
@@ -16,12 +15,7 @@ export const EditTechModal = ({})=>{
                         <button className="modal__close" onClick={() => setEditingTech(null)}>X</button>
                     </div>
                     <div className={style.createModal__content}>
-                        <EditModalForm
-                            //techUpdate={techUpdate} 
-                            
-                        // setEditingTech={setEditingTech} 
-                        // editingTech={editingTech} 
-                         />
+                        <EditModalForm/>
                     </div>
                 </div>
             </div>

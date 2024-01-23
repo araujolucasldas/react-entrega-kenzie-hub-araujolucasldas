@@ -2,9 +2,7 @@ import { useForm } from "react-hook-form"
 import style from "./editModalForm.module.scss"
 import { useContext } from "react"
 import { TechContext } from "../../../providers/TechContext"
-//import { api } from "../../../services/api"
 
-//techUpdate,  editingTech
 export const EditModalForm = () => {
     const {editingTech, techUpdate} = useContext(TechContext)
 
@@ -18,30 +16,6 @@ export const EditModalForm = () => {
     const submit = (formData) => {
         techUpdate(formData)
     }
-
-//    const techUpdate = async(formData)=>{
- //       try {
-   //         const token = localStorage.getItem("@TOKEN")
-//
-  //          const {data} = await api.put(`/users/techs/${editingTech.id}`, formData, {
-    //            headers: { Authorization: `Bearer ${token}` },
-      //        })
-//
-  //          const newTechList = tech.map((item)=>{
-    //            if(item.id === editingTech.id){
-      //              return data
-        //        }else{
-          //          return item
-            //    }
-            //})
-
-            //setTech(newTechList)
-            //setEditingTech(null)
-            //console.log(newTechList)
-        //} catch (error) {
-          //  console.log(error)
-        //}
-    //}
 
     return (
         <>

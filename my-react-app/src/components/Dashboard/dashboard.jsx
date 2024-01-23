@@ -4,12 +4,7 @@ import { CreateTechModal } from "../../component/modals/CreateTechModal/createTe
 import style from "./dashboard.module.scss"
 import { useState } from "react"
 
-//techRegister
-//techDelete
-//techUpdate
-//editingTech
-//setEditingTech
-export const Dashboard = ({ user, userLogout, tech}) => {
+export const Dashboard = ({ user, userLogout}) => {
     const [openCreateModal, setOpenCreateModal] = useState(false)
 
 
@@ -33,18 +28,11 @@ export const Dashboard = ({ user, userLogout, tech}) => {
                         <h1 className="techs__title">Tecnologias</h1>
                         <button className="techs__button" onClick={() => setOpenCreateModal(true)}>+</button>
                         {openCreateModal ? <CreateTechModal
-                        //techRegister={techRegister}
                             
                         setOpenCreateModal={setOpenCreateModal} 
                          /> : null}
                     </div>
-                    <TechList 
-                        // techUpdate={techUpdate}
-                        // editingTech={editingTech}
-                        // setEditingTech={setEditingTech}
-                    //tech={tech} 
-                    //techDelete={techDelete}
-                    />
+                    <TechList/>
                 </section>
             </main>
         </>

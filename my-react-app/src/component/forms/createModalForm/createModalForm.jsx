@@ -1,10 +1,8 @@
 import { useForm } from "react-hook-form"
 import style from "./createModalForm.module.scss"
-import { api } from "../../../services/api"
 import { useContext } from "react"
 import { TechContext } from "../../../providers/TechContext"
 
-//techRegister
 export const CreateModalForm = () => {
     const { register, handleSubmit } = useForm()
 
@@ -13,21 +11,6 @@ export const CreateModalForm = () => {
     const submit = (formData) => {
         techRegister(formData)
     }
-
-    //const techRegister = async(formData)=>{
-      //  const token = localStorage.getItem("@TOKEN")
-
-        //try {
-          //  const{data} = await api.post("/users/techs/", formData, { headers:{
-          //      Authorization: `Bearer ${token}`
-            //}
-                
-            //})
-            //setTech(tech=>[...tech, data])
-        //} catch (error) {
-          //  console.log(error)
-        //}
-    //}
 
     return (
         <>
